@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Correo</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" type="image/x-icon" href="/examen_2/img/logo.png" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"  crossorigin="anonymous">
+        <link rel="stylesheet" href="css/default.css"  >
+
+    </head>
+    <body style="background-image: url(https://webmail.afterlogic.com/static/styles/themes/Default/images/background.jpg); background-attachment: scroll; background-size: cover;">
+        <div class="alert alert-danger w-25 alert-correo" id="noexistecorreo" role="alert">
+            El correo No Existe
+        </div>
+        <div class="modal fade" id="modalAdd" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl h-100" role="document">
+                <div class="modal-content h-75">
+                    <div class="modal-header bg-gris">
+                        <div class="container-fluid">
+                            <div class="justify-content-end">
+                                <button type="button" class="btn bg-verdesito-claro" id="sendCorreoAction">Enviar Correo</button>
+                            </div>
+                        </div>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" id="editarBody">
+                        <div class="container-fluid h-100">
+                            
+                            <div class="row border-bottom">
+                                <div class="col-1">
+                                    <b>To</b>
+                                </div>
+                                <div class="col-11">
+                                    <input class="form-control border-0 outline-0" style="width: 100%;float: right;" type="text" id="destinatarios" value="" autocomplete="off">
+                                    <div style="background: lightsteelblue; color: white; position: absolute; z-index: 10; width: 100%; top:40px" id="contactosDestinatarios">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row border-bottom my-2">
+                                <div class="col-1">
+                                    <b>Subject</b>
+                                </div>
+                                <div class="col-11">
+                                    <input class="form-control border-0 w-100" type="text" id="tituloCorreoMensaje">
+                                </div>
+                            </div>
+                            
+                            <div class="row h-75">
+                                <textarea class="w-100 border-0 h-100" name="texto" id="textoCorreo"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="navbar navbar-expand-sm bg-white  navbar-inverse " style="background-image: url(/examen_2/img/background.jpg); background-repeat: no-repeat; background-size: 100%;">
+            <div class="container-fluid" >
+                <div class="justify-content-start">
+                    <div class="navbar-nav">
+                        <a class="nav nav-link active" href="#" id="usuarioSession"></a>
+                        <a class="nav-item nav-link"  href="contactos.html"> Contactos</a>
+                        
+                    </div>
+                </div>
+                <button class="navbar-toggler" data-toggle="collapse" data-target="#mainNav">
+                    <span class="fas fa-align-justify"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+                    <span class="nav-item nav-link" id="nombreUsuario"></span>
+                    <a class="nav-item nav-link" href="" id="logout"> Salir</a>
+                </div>
+            </div>
+        </nav>        
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-3 bg-transparente rounded-top" id="sidebar-wrapper" >
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-10 my-3">
+                            <button type="button" class="btn btn-block btn-lg" id="correoNuevo" data-toggle="modal" data-target="#modalAdd" style="background-color: #43d0bf; color: white;">New Messege</button>
+                        </div>
+                    </div>              
+                    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                        <a class="nav-link " id="v-pills-home-tab" href="correo.html" aria-selected="true"><i class="fa fa-inbox" aria-hidden="true"></i>&nbsp;Inbox</a>
+                        <a class="nav-link active" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false"><i class="fa fa-paper-plane" aria-hidden="true"></i>&nbsp;Enviados</a>
+                        <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false"><i class="fa fa-star" aria-hidden="true"></i>&nbsp;Starred</a>
+                        <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false"><i class="fa fa-file" aria-hidden="true"></i>&nbsp;Draft</a>
+                    </div>
+                </div>
+                <div class="col-4 rounded-top" style="height: 800px !important;">
+                    <div class="bg-light rounded-top" id="sidebar-wrapper" style="height: 100%;">
+                        <div class="container py-4">
+                            <div class="row justify-content-start" >
+                                
+                            </div>   
+                        </div>
+                        
+
+                        <nav class="nav justify-content-center nav-pills flex-column  flex-md-row my-4" id="listaTitulosEnviados">
+
+                        </nav>
+
+                    </div>
+                </div>
+                <div class="col-5 bg-white rounded-top">
+                    <div class="tab-content py-4 h-75" id="correoEnviado">
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <script src="https://code.jquery.com/jquery-3.5.1.js"  crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/39f4ebbbea.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="js/correo.js"></script>
+    </body>
+</html>

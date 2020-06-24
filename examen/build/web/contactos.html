@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Correo</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" type="image/x-icon" href="/examen_2/img/logo.png" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"  crossorigin="anonymous">
+        <link rel="stylesheet" href="css/default.css"  >
+
+    </head>
+    <body style="background-image: url(https://webmail.afterlogic.com/static/styles/themes/Default/images/background.jpg); background-attachment: scroll; background-size: cover;">
+        <nav class="navbar navbar-expand-sm bg-white  navbar-inverse " style="background-image: url(/examen_2/img/background.jpg); background-repeat: no-repeat; background-size: 100%;">
+            <div class="container-fluid" >
+                <div class="justify-content-start">
+                    <div class="navbar-nav">
+                        <a class="nav nav-link active" href="correo.html" id="usuarioSession"></a>
+                        <a class="nav-item nav-link"  href="#"> Contactos</a>
+                    </div>
+                </div>
+                <button class="navbar-toggler" data-toggle="collapse" data-target="#mainNav">
+                    <span class="fas fa-align-justify"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+                    <span class="nav-item nav-link" id="nombreUsuario"></span>
+                    <a class="nav-item nav-link" href="" id="logout"> Salir</a>
+                </div>
+            </div>
+        </nav>        
+        <div class="container h-100">
+            <div class="row" style="height: 600px;">
+                <div class="col-12 h-100 bg-transparente rounded-top" id="sidebar-wrapper" >
+                	<div class="btn-block w-50 my-3 mx-auto bg-verdesito-claro rounded" style="font-size: 30px; text-align: center;">Contactos</div>
+                	<div class="container mt-5">
+	                    <div class="list-group" id="contactosList">
+						    
+						</div>
+					</div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <script src="https://code.jquery.com/jquery-3.5.1.js"  crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/39f4ebbbea.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="js/correo.js"></script>
+    </body>
+</html>
